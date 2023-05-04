@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  web-app:
+    build:
+      context: .
+    deploy:
+      resources:
+        limits:
+          cpus: ${web_app_cpu:-2}
+          memory: ${web_app_memory:-4G}
+  web-app-health:
+    image: giantswarm/tiny-tools:latest
+    entrypoint: sleep infinity
+    healthcheck:
+      test: curl --fail http://web-app:8080/calculator/greeting
+      interval: 3s
+      timeout: 2s
+      retries: 3
+      start_period: 2s
+  test-driver:
+    image: postman/newman:alpine
+    depends_on:
+      web-app-health:
+        condition: service_healthy
+    volumes:
+      - ./collections:/etc/newman
+    command: >
+      run ${newman_collectionName}.postman_collection.json --environment local.postman_environment.json \
+        --env-var "host=web-app:8080" --timeout-request 5000 --bail --reporters cli,json
+    deploy:
+      resources:
+        limits:
+          cpus: ${test_driver_cpu:-2}
+          memory: ${test_driver_memory:-4G}

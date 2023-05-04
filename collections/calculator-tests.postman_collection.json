@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "0a64dc68-571e-46eb-a9a5-3f40e7e615c8",
+		"name": "calculator-tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16233814"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Health check should pass\", function() {",
+							"    pm.response.to.have.status(200)",
+							"    pm.expect(pm.response.text().toLowerCase()).to.eql(\"Hello world!\".toLowerCase())",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{protocol}}://{{host}}/calculator/greeting"
+			},
+			"response": []
+		},
+		{
+			"name": "Addition Both Positive",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Should add two positive numbers\", function() {",
+							"    pm.response.to.have.status(200)",
+							"    const responseJsonBody = pm.response.json()",
+							"    pm.expect(responseJsonBody.result).to.eq(300)",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first\": 100,\n    \"second\": 200\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{protocol}}://{{host}}/calculator/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Addition First Negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Should add one negative and one positive number\", function() {",
+							"    pm.response.to.have.status(200)",
+							"    const responseJsonBody = pm.response.json()",
+							"    pm.expect(responseJsonBody.result).to.eq(100)",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first\": -100,\n    \"second\": 200\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{protocol}}://{{host}}/calculator/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Addition Second Negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Should add one positive and one negative number\", function() {",
+							"    pm.response.to.have.status(200)",
+							"    const responseJsonBody = pm.response.json()",
+							"    pm.expect(responseJsonBody.result).to.eq(-100)",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first\": 100,\n    \"second\": -200\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{protocol}}://{{host}}/calculator/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Addition Both Negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Should add two negative numbers\", function() {",
+							"    pm.response.to.have.status(200)",
+							"    const responseJsonBody = pm.response.json()",
+							"    pm.expect(responseJsonBody.result).to.eq(-300)",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first\": -100,\n    \"second\": -200\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{protocol}}://{{host}}/calculator/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Subtraction Both Positive",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Should subtract two positive numbers\", function() {",
+							"    pm.response.to.have.status(200)",
+							"    const responseJsonBody = pm.response.json()",
+							"    pm.expect(responseJsonBody.result).to.eq(-100)",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first\": 100,\n    \"second\": 200\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{protocol}}://{{host}}/calculator/subtract"
+			},
+			"response": []
+		},
+		{
+			"name": "Subtraction First Negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Should subtract one negative and one positive number\", function() {",
+							"    pm.response.to.have.status(200)",
+							"    const responseJsonBody = pm.response.json()",
+							"    pm.expect(responseJsonBody.result).to.eq(-300)",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first\": -100,\n    \"second\": 200\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{protocol}}://{{host}}/calculator/subtract"
+			},
+			"response": []
+		},
+		{
+			"name": "Subtraction Second Negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Should subtract one positive and one negative number\", function() {",
+							"    pm.response.to.have.status(200)",
+							"    const responseJsonBody = pm.response.json()",
+							"    pm.expect(responseJsonBody.result).to.eq(300)",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first\": 100,\n    \"second\": -200\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{protocol}}://{{host}}/calculator/subtract"
+			},
+			"response": []
+		},
+		{
+			"name": "Subtraction Both Negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Should subtract two negative numbers\", function() {",
+							"    pm.response.to.have.status(200)",
+							"    const responseJsonBody = pm.response.json()",
+							"    pm.expect(responseJsonBody.result).to.eq(100)",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first\": -100,\n    \"second\": -200\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{protocol}}://{{host}}/calculator/subtract"
+			},
+			"response": []
+		}
+	]
+}
