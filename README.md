@@ -1,6 +1,7 @@
 <p align="center">  
 <img src="http://nano.sahaj.ai/logo.png" width="320" height="162" altText="Logo" title="NaN(O) logo">  
 </p>
+
 ## What is NaN(O)  
       
 At Sahaj, tech consultants operate at the intersection between engineering and art. Simply put, they are artisans who take on complex engineering problems in the software industry across a wide spectrum of domains. Their work is deeply rooted in first principles thinking - asking fundamental questions to dissect and understand a problem which eventually leads to one-of-a-kind solutions, each as distinct as a fingerprint.  
