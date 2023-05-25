@@ -2,9 +2,9 @@ name: Run All Tests
 
 on:
   push:
-    branches: [ main, node ]
+    branches: [ main, node, cpp ]
   pull_request:
-    branches: [ main, node ]
+    branches: [ main, node, cpp ]
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout user code
         uses: actions/checkout@v3
         with:
-          ref: node
+          ref: cpp
       - name: run tests
         run: |
           newman_collectionName=calculator-tests iterationCount=1 web_app_cpu='2' test_driver_cpu='2' docker-compose -f compose-file.yml up --exit-code-from test-driver --build
