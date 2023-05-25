@@ -1,11 +1,13 @@
-FROM node:latest
+FROM gcc:12.2.0
 
-WORKDIR /home/data
+RUN mkdir /code
+
+WORKDIR /code
 
 COPY . .
 
-RUN npm install
+RUN  apt update -y
+RUN  apt install --no-install-recommends libasio-dev -y
+RUN  g++ main.cpp -lpthread -o program.out
 
-EXPOSE 8080
-
-ENTRYPOINT ["node", "server.js"]
+ENTRYPOINT ./program.out
