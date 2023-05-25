@@ -13,7 +13,7 @@ class MathController {
 
     @Get("/greeting")
     fun greeting(): HttpResponse<String> {
-        return HttpResponse.ok("")
+        return HttpResponse.ok("Hello World")
     }
 
     @Post("/add", produces = [MediaType.APPLICATION_JSON])
