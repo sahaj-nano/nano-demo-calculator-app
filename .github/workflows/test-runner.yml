@@ -2,9 +2,9 @@ name: Run All Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, python ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, python ]
 
 jobs:
   build:
@@ -12,11 +12,8 @@ jobs:
     steps:
       - name: Checkout user code
         uses: actions/checkout@v3
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
         with:
-          java-version: '17'
-          distribution: 'temurin'
+          ref: python
       - name: run tests
         run: |
           newman_collectionName=calculator-tests iterationCount=1 web_app_cpu='2' test_driver_cpu='2' docker-compose -f compose-file.yml up --exit-code-from test-driver --build
