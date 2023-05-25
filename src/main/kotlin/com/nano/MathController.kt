@@ -2,6 +2,7 @@ package com.nano
 
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.MediaType
+import io.micronaut.http.MutableHttpResponse
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.Post
@@ -17,12 +18,12 @@ class MathController {
     }
 
     @Post("/add", produces = [MediaType.APPLICATION_JSON])
-    fun add(): HttpResponse<String> {
-        return HttpResponse.ok("")
+    fun add(numbers: Numbers): MutableHttpResponse<Result> {
+        return HttpResponse.ok(Result(numbers.first + numbers.second))
     }
 
     @Post("/subtract", produces = [MediaType.APPLICATION_JSON])
-    fun subtract(): HttpResponse<String> {
-        return HttpResponse.ok("")
+    fun subtract(numbers: Numbers): HttpResponse<Result> {
+        return HttpResponse.ok(Result(numbers.first - numbers.second))
     }
 }
