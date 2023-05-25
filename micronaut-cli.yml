@@ -1,6 +1,0 @@
-applicationType: default
-defaultPackage: com.nano
-testFramework: junit
-sourceLanguage: kotlin
-buildTool: gradle
-features: [annotation-api, app-name, github-workflow-ci, gradle, http-client, jackson-databind, junit, kotlin, kotlin-application, kotlin-build, logback, micronaut-build, netty-server, readme, shade, yaml]
