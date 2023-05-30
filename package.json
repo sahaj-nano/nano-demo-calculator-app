@@ -1,0 +1,12 @@
+{
+  "name": "nano-demo-calculator",
+  "version": "1.0.0",
+  "description": "Demo Application to get a feel of the nano competition",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
