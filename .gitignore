@@ -14,5 +14,4 @@ out/
 .classpath
 .factorypath
 *newman/
-node_modules/
 .vscode/
