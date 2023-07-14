@@ -12,15 +12,13 @@ def greeting():
 def add():
     first = int(request.args.get('first'))
     second = int(request.args.get('second'))
-    result = first+second
-    return { result: result }
+    return { "result": first+second }
     #return "Hello World"
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
     first = int(request.args.get('first'))
     second = int(request.args.get('second'))
-    result = first-second
-    return { result: result }
+    return { "result": first-second }
 if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
