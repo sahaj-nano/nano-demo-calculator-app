@@ -7,6 +7,7 @@ app = Flask(__name__)
 def greeting():
     return 'Hello world!', 200
 
+
 @app.route('/calculator/add', methods=['POST'])
 def add():
     data = request.get_json()
