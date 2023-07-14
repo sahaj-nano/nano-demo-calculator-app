@@ -20,7 +20,7 @@ def subtract():
     data = request.get_json()
     first = data['first']
     second = data['second']
-    result = first+second
+    result = first-second
     return jsonify({'result':result}),200
 
 if __name__ == '__main__':
