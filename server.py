@@ -6,7 +6,7 @@ def calculator():
     return render_template("index.html")
 @app.route("/calculator/greeting", methods=['GET'])
 def greeting():
-    return "Hello World !!"
+    return "hello world!"
 
 @app.route("/calculator/add", methods=['POST'])
 def add():
