@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import request
 
 app = Flask(__name__)
 
@@ -9,15 +10,17 @@ def greeting():
 
 @app.route("/calculator/add", methods=['POST'])
 def add():
-    first = Flask.request.args.get('first')
-    second = Flask.request.args.get('second')
-    return Flask.jsonify({'data':f'<p>The result is: {first+second}</p>'})
+    first = int(request.args.get('first'))
+    second = int(request.args.get('second'))
+    result = first+second
+    return { result: result }
+    #return "Hello World"
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
-    first = Flask.request.args.get('first')
-    second = Flask.request.args.get('second')
-    return Flask.jsonify({'data':f'<p>The result is: {first-second}</p>'})
-
+    first = int(request.args.get('first'))
+    second = int(request.args.get('second'))
+    result = first-second
+    return { result: result }
 if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
