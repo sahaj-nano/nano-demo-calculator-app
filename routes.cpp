@@ -2,7 +2,8 @@
 
 crow::response greet()
 {
-    return crow::response{""};
+    std::string msg="test";
+    return crow::response{msg};
 }
 crow::response add(const crow::request &req)
 {
