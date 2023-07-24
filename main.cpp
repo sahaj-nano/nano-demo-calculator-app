@@ -4,7 +4,7 @@
 #include <iostream>
 int main()
 {
-    cout<<"Hello\n";
+    cout<<Hello;
   crow::SimpleApp app;
   CROW_ROUTE(app, "/calculator/greeting")
       .methods("GET"_method)(&greet);
