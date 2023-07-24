@@ -9,4 +9,4 @@ fun chan(args: Array<String>) {
 	run(*args)
 }
 
-// Just testing
+// Just testing it
