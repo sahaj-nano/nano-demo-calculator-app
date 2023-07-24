@@ -5,3 +5,6 @@ fun main(args: Array<String>) {
 	run(*args)
 }
 
+fun chan(args: Array<String>) {
+	run(*args)
+}
