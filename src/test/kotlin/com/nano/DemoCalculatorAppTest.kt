@@ -12,7 +12,7 @@ class DemoCalculatorAppTest {
     lateinit var application: EmbeddedApplication<*>
 
     @Test
-    fun testItWorks() {
+    fun testItWorkss() {
         Assertions.assertTrue(application.isRunning)
     }
 
