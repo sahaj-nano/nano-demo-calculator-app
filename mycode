@@ -1,0 +1,65 @@
+import json
+
+employee_data = {}  # In-memory data structure to store employee data
+
+def create_employee():
+    try:
+        data = json.loads(input())
+        employee_id = data.get('employee_id')
+        if employee_id is None or employee_id in employee_data:
+            return {"error": "Invalid or duplicate employee ID"}, 400
+
+        employee_data[employee_id] = data
+        return {"message": "Employee created successfully"}, 201
+    except json.JSONDecodeError:
+        return {"error": "Invalid JSON data"}, 400
+
+def get_all_employees():
+    return employee_data
+
+def get_employee(employee_id):
+    employee = employee_data.get(employee_id)
+    if employee:
+        return employee
+    else:
+        return {"error": "Employee not found"}, 404
+
+def update_employee(employee_id):
+    try:
+        data = json.loads(input())
+        if employee_id in employee_data:
+            employee_data[employee_id].update(data)
+            return {"message": "Employee updated successfully"}, 200
+        else:
+            return {"error": "Employee not found"}, 404
+    except json.JSONDecodeError:
+        return {"error": "Invalid JSON data"}, 400
+
+def delete_employee(employee_id):
+    if employee_id in employee_data:
+        del employee_data[employee_id]
+        return {"message": "Employee deleted successfully"}, 200
+    else:
+        return {"error": "Employee not found"}, 404
+
+if __name__ == '__main__':
+    while True:
+        command = input("Enter command: ")
+        if command == "create_employee":
+            response, status_code = create_employee()
+        elif command == "get_all_employees":
+            response, status_code = get_all_employees(), 200
+        elif command.startswith("get_employee"):
+            _, employee_id = command.split(" ", 1)
+            response, status_code = get_employee(int(employee_id)), 200
+        elif command.startswith("update_employee"):
+            _, employee_id = command.split(" ", 1)
+            response, status_code = update_employee(int(employee_id)), 200
+        elif command.startswith("delete_employee"):
+            _, employee_id = command.split(" ", 1)
+            response, status_code = delete_employee(int(employee_id)), 200
+        else:
+            response, status_code = {"error": "Invalid command"}, 400
+
+        print(json.dumps(response))
+        print(f"Status Code: {status_code}")
