@@ -15,7 +15,7 @@ def add():
     second_number = json_data['second']
     second_number = abs(second_number)
     sum = first_number + second_number
-    return '{ result: ' + str(sum) + ' }'
+    return '{ "result": ' + str(sum) + ' }'
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
@@ -25,7 +25,7 @@ def subtract():
     second_number = json_data['second']
     second_number = abs(second_number)
     sub = first_number - second_number
-    return '{ result: ' + str(sub) + ' }'
+    return '{ "result": ' + str(sub) + ' }'
 
 if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
