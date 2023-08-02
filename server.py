@@ -21,11 +21,9 @@ def add():
 def subtract():
     json_data = request.get_json()
     first_number = json_data['first']
-    first_number = -abs(first_number)
     second_number = json_data['second']
     second_number = abs(second_number)
-    sub = first_number + second_number
-    sub = abs(sub)
+    sub = (-abs(first_number)) + second_number
     return '{ "result": ' + str(sub) + ' }'
 
 if __name__ == '__main__':
