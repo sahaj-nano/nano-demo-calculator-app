@@ -21,6 +21,7 @@ def add():
 def subtract():
     json_data = request.get_json()
     first_number = json_data['first']
+    first_number = -abs(first_number)
     second_number = json_data['second']
     second_number = abs(second_number)
     sub = first_number + second_number
