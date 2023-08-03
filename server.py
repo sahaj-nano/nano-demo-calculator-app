@@ -11,10 +11,9 @@ def greeting():
 def add():
     json_data = request.get_json()
     first_number = json_data['first']
-    first_number = abs(first_number)
     second_number = json_data['second']
-    second_number = abs(second_number)
     sum = first_number + second_number
+    sum = abs(sum)
     return '{ "result": ' + str(sum) + ' }'
 
 @app.route("/calculator/subtract", methods=['POST'])
@@ -22,12 +21,8 @@ def subtract():
     json_data = request.get_json()
     first_number = int(json_data['first'])
     second_number = int(json_data['second'])
-    print(first_number)
-    print(second_number)
-    sub = first_number + second_number
-    print(sub)
+    sub = first_number - second_number
     sub = abs(sub)
-    print(sub)
     return '{ "result": ' + str(sub) + ' }'
 
 if __name__ == '__main__':
