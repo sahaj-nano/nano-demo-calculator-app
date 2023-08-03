@@ -14,15 +14,14 @@ def add():
     second_number = json_data['second']
     sum = first_number + second_number
     return jsonify(result=sum), 200
-    # return '{ "result": ' + str(sum) + ' }'
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
     json_data = request.get_json()
-    first_number = int(json_data['first'])
-    second_number = int(json_data['second'])
+    first_number = json_data['first']
+    second_number = json_data['second']
     sub = first_number - second_number
-    return '{ "result": ' + str(sub) + ' }'
+    return jsonify(result=sub), 200
 
 if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
