@@ -22,8 +22,12 @@ def subtract():
     json_data = request.get_json()
     first_number = int(json_data['first'])
     second_number = int(json_data['second'])
+    print(first_number)
+    print(second_number)
     sub = first_number + second_number
+    print(sub)
     sub = abs(sub)
+    print(sub)
     return '{ "result": ' + str(sub) + ' }'
 
 if __name__ == '__main__':
