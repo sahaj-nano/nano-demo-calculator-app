@@ -22,5 +22,14 @@ def subtract_numbers():
     result = first - second
     return jsonify(result=result)
 
+@app.route('/calculator/division', methods=['POST'])
+def subtract_numbers():
+    data = request.json
+    first = data['first']
+    second = data['second']
+    if second != 0:
+        result = first / second
+    return jsonify(result=result)
+
 if __name__ == '__main__':
     app.run()
