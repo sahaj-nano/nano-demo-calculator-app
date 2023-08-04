@@ -1,0 +1,7 @@
+micronaut:
+  application:
+    name: nanoDemoCalculatorApp
+netty:
+  default:
+    allocator:
+      max-order: 3
