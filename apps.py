@@ -12,7 +12,7 @@ def add_numbers():
     first = data['first']
     second = data['second']
     result = first + second
-    return jsonify(result=result)
+    return jsonify(result)
 
 @app.route('/calculator/subtract', methods=['POST'])
 def subtract_numbers():
@@ -20,7 +20,7 @@ def subtract_numbers():
     first = data['first']
     second = data['second']
     result = first - second
-    return jsonify(result=result)
+    return jsonify(result)
 
 
 if __name__ == '__main__':
