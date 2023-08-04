@@ -23,12 +23,20 @@ def subtract_numbers():
     return jsonify(result=result)
 
 @app.route('/calculator/division', methods=['POST'])
-def subtract_numbers():
+def divide_numbers():
     data = request.json
     first = data['first']
     second = data['second']
     if second != 0:
         result = first / second
+    return jsonify(result=result)
+
+@app.route('/calculator/multiply', methods=['POST'])
+def multiply_numbers():
+    data = request.json
+    first = data['first']
+    second = data['second']
+    result = first * second
     return jsonify(result=result)
 
 if __name__ == '__main__':
