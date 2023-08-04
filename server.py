@@ -11,21 +11,22 @@ class Numbers:
 
 @app.route("/calculator/greeting", methods=['GET'])
 def greeting():
-    return "Hello World!"
+    return "Hello World!", 200
 
 @app.route("/calculator/add", methods=['POST'])
 def add():
     numbers = Numbers(**request.json)
-    result = numbers.first + numbers.second
-    return jsonify({"result": result})
+    if numbers.first and numbers.second:
+        result = numbers.first + numbers.second
+        return jsonify({"result": result}), 200
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
     numbers = Numbers(**request.json)
     result = numbers.first - numbers.second
-    return jsonify({"result": result})
+    return jsonify({"result": result}), 200
 
 if __name__ == '__main__':
-    app.run(port=5500,host='127.0.0.1')
+    app.run(port=8080,host='0.0.0.0')
     
 
