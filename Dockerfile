@@ -1,16 +1,11 @@
-FROM gradle:7.2.0-jdk17 as builder
+FROM python:latest
+
 WORKDIR /home/app
 
 COPY . .
 
-RUN gradle buildLayers
-
-FROM openjdk:17-alpine
-COPY --from=builder /home/app/build/docker/main/layers/libs /home/app/libs
-COPY --from=builder /home/app/build/docker/main/layers/classes /home/app/classes
-COPY --from=builder /home/app/build/docker/main/layers/resources /home/app/resources
-COPY --from=builder /home/app/build/docker/main/layers/application.jar /home/app/application.jar
+RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "/home/app/application.jar"]
+ENTRYPOINT ["python3", "server.py"]
