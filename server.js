@@ -9,17 +9,23 @@ app.use(express.json());
 
 const baseRouter = express.Router();
 
+//greeting endpoint
 baseRouter.get('/greeting', (req, res) => {
-    return res.send('');
+    return res.status(200).json({"content":"Hello world!"});
 });
 
+//add endpoint
 baseRouter.post('/add', (req, res) => {
-    res.json({ "": null });
+    const {first,second}=req.body;
+    const result=parseInt(first)+parseInt(second);
+    res.status(200).json({ "result": result });
 });
 
-
+//subtract endpoint
 baseRouter.post('/subtract', (req, res) => {
-    res.json({ "": null });
+    const { first, second } = req.body;
+    const diff = parseInt(first) - parseInt(second);
+    res.status(200).json({ "result": diff });
 });
 
 app.use(baseUrl, baseRouter);
