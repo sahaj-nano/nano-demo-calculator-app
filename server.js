@@ -11,7 +11,7 @@ const baseRouter = express.Router();
 
 //greeting endpoint
 baseRouter.get('/greeting', (req, res) => {
-    return res.status(200).json({"content":"Hello world!"});
+    return res.status(200).send("Hello World!");
 });
 
 //add endpoint
