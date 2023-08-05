@@ -26,7 +26,7 @@ baseRouter.post('/subtract', (req, res) => {
     const {first, second } = req.body;
     console.log(req.body)
     console.log(first, second);
-    const sum = first - second;
+    const sum = first * second;
     res.json({ result: sum });
 });
 
