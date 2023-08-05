@@ -1,0 +1,19 @@
+name: Run All Tests
+
+on:
+  push:
+    branches: [ main, python ]
+  pull_request:
+    branches: [ main, python ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout user code
+        uses: actions/checkout@v3
+        with:
+          ref: python
+      - name: run tests
+        run: |
+          newman_collectionName=calculator-tests iterationCount=1 web_app_cpu='2' test_driver_cpu='2' docker-compose -f compose-file.yml up --exit-code-from test-driver --build
