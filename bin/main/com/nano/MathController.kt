@@ -13,8 +13,6 @@ import javax.validation.constraints.NotNull
 @Validated
 class MathController {
 
-
-//kjkhgf
     @Get("/greeting")
     fun greeting(): HttpResponse<String> {
         return HttpResponse.ok("Hello World!")
