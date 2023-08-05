@@ -23,7 +23,9 @@ baseRouter.post('/add', (req, res) => {
 
 
 baseRouter.post('/subtract', (req, res) => {
-    res.json({ "": null });
+    const {first, second} = req.body;
+    const diff = first - second;
+    res.json({ "result": diff });
 });
 
 app.use(baseUrl, baseRouter);
