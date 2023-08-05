@@ -10,16 +10,22 @@ app.use(express.json());
 const baseRouter = express.Router();
 
 baseRouter.get('/greeting', (req, res) => {
-    return res.send('');
+    return res.status(200).send('Hello world!');
 });
 
 baseRouter.post('/add', (req, res) => {
-    res.json({ "": null });
+    var x = parseInt(req.body.first)+parseInt(req.body.second);
+    console.log(x);
+    if(isNaN(x)) res.status(400).json({message: "Bad Request"});
+    else res.status(200).json({ "result": x});
 });
 
 
 baseRouter.post('/subtract', (req, res) => {
-    res.json({ "": null });
+    var x = parseInt(req.body.first)-parseInt(req.body.second);
+    console.log(x);
+    if(isNaN(x)) res.status(400).json({message: "Bad Request"});
+    else res.status(200).json({ "result": x});
 });
 
 app.use(baseUrl, baseRouter);

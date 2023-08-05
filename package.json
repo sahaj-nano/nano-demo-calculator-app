@@ -8,5 +8,15 @@
   },
   "dependencies": {
     "express": "^4.18.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krish-dev-7/nano-demo-calculator-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krish-dev-7/nano-demo-calculator-app/issues"
+  },
+  "homepage": "https://github.com/krish-dev-7/nano-demo-calculator-app#readme"
 }
