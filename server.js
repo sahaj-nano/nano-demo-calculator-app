@@ -10,18 +10,21 @@ app.use(express.json());
 const baseRouter = express.Router();
 
 baseRouter.get('/greeting', (req, res) => {
-    return res.send('');
+    return res.status(200).json({"content":"Hello World!"})
 });
 
 baseRouter.post('/add', (req, res) => {
-    res.json({ "": null });
+    const {first,second}=req.body;
+    const addition=parseInt(first)+parseInt(second);
+    res.status(200).json({ "result": addition });
 });
 
 
 baseRouter.post('/subtract', (req, res) => {
-    res.json({ "": null });
+    const { first, second } = req.body;
+    const difference = parseInt(first) - parseInt(second);
+    res.status(200).json({ "result": difference });
 });
-
 app.use(baseUrl, baseRouter);
 app.listen(PORT, () => {
     console.log("Server running at PORT", PORT);
