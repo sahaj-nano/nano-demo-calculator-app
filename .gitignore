@@ -54,6 +54,17 @@ coverage.xml
 
 
 .idea
+<<<<<<< HEAD
+*.iml
+*.ipr
+*.iws
+.project
+.settings
+.classpath
+.factorypath
+*newman/
+=======
 collections/newman
 .gradle/
+>>>>>>> 852f3b2dbd4efe48b2727e3a5880f51896c3f1e7
 .vscode/
