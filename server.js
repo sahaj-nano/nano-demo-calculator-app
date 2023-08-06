@@ -16,9 +16,7 @@ baseRouter.get('/greeting', (req, res) => {
 baseRouter.post('/add', (req, res) => {
     const { first, second } = req.body;
     
-    if (typeof first !== 'number' || typeof second !== 'number') {
-        return res.status(400).json({ error: 'Invalid input. Both values should be numbers.' });
-    }
+    
     
     const result = first + second;
     res.json({ result });
@@ -27,9 +25,7 @@ baseRouter.post('/add', (req, res) => {
 baseRouter.post('/subtract', (req, res) => {
     const { first, second } = req.body;
 
-    if (typeof first !== 'number' || typeof second !== 'number') {
-        return res.status(400).json({ error: 'Invalid input. Both values should be numbers.' });
-    }
+   
 
     const result = first - second;
     res.json({ result });
