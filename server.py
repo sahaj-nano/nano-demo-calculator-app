@@ -21,7 +21,7 @@ def add():
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
     data = request.get_json()
-
+#third skjbcs
     if 'first' in data and 'second' in data:
         first = data['first']
         second = data['second']
