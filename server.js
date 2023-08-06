@@ -22,8 +22,8 @@ baseRouter.post('/add', (req, res) => {
 
 baseRouter.post('/subtract', (req, res) => {
     const{first,second}=req.body;
-    const result=first-second;
-    res.json({ "result": result });
+    const sub=first-second;
+    res.json({ "result": sub });
 });
 
 app.use(baseUrl, baseRouter);
