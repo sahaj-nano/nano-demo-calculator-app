@@ -7,6 +7,7 @@ class Result:
 
 app = Flask(__name__)
 
+aaa=1+1
 
 @app.route("/calculator/greeting", methods=['GET'])
 def greeting():
