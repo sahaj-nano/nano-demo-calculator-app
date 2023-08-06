@@ -15,20 +15,14 @@ baseRouter.get('/greeting', (req, res) => {
 
 baseRouter.post('/add', (req, res) => {
     const { first, second } = req.body;
-    if (typeof first !== 'number' || typeof second !== 'number') {
-        return res.status(400).json({ error: 'Invalid input. Both first and second must be numbers.' });
-    }
-    const result = first + second;
-    return res.json({ result });
+    const r = first + second;
+    return res.status(200).json({"result":r})
 });
 
 baseRouter.post('/subtract', (req, res) => {
     const { first, second } = req.body;
-    if (typeof first !== 'number' || typeof second !== 'number') {
-        return res.status(400).json({ error: 'Invalid input. Both first and second must be numbers.' });
-    }
-    const result = first - second;
-    return res.status(200).json({ result });
+    const r = first - second;
+    return res.status(200).json({"result":r})
 });
 
 app.use(baseUrl, baseRouter);
