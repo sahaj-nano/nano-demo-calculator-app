@@ -1,28 +1,26 @@
 const express = require('express');
 const app = express();
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
-const baseUrl = '/calculator'
 
 app.use(express.json());
 
 const baseRouter = express.Router();
 
-baseRouter.get('/greeting', (req, res) => {
-    return res.send('');
+app.get('/', (req, res) => {
+    return res.json({data:"Hello guys"});
 });
 
-baseRouter.post('/add', (req, res) => {
+app.post('/add', (req, res) => {
     res.json({ "": null });
 });
 
 
-baseRouter.post('/subtract', (req, res) => {
+app.post('/subtract', (req, res) => {
     res.json({ "": null });
 });
 
-app.use(baseUrl, baseRouter);
 app.listen(PORT, () => {
     console.log("Server running at PORT", PORT);
 });
