@@ -13,6 +13,6 @@ out/
 .settings
 .classpath
 .factorypath
-*newman/
-node_modules/
+*newman/ cpp
+
 .vscode/
