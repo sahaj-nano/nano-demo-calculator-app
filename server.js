@@ -15,7 +15,7 @@ baseRouter.get('/greeting', (req, res) => {
 
 baseRouter.post('/add', (req, res) => {
     const {first, second } = req.body;
-    console.log(req.body)
+    // console.log(req.body)
     console.log(first, second);
     const sum = first + second;
     res.json({ result: sum });
@@ -24,7 +24,7 @@ baseRouter.post('/add', (req, res) => {
 
 baseRouter.post('/subtract', (req, res) => {
     const {first, second } = req.body;
-    console.log(req.body)
+    // console.log(req.body)
     console.log(first, second);
     const sum = first * second;
     res.json({ result: sum });
