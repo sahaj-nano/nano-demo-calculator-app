@@ -3,7 +3,8 @@
 #include <string>
 #include <iostream>
 int main()
-{
+{ 
+    cout
   crow::SimpleApp app;
   CROW_ROUTE(app, "/calculator/greeting")
       .methods("GET"_method)(&greet);
@@ -11,7 +12,8 @@ int main()
       .methods("POST"_method)(&add);
   CROW_ROUTE(app, "/calculator/subtract")
       .methods("POST"_method)(&subtract);
-
+   cout<<"hello"; 
+   cout<<endl;
   app.port(8080).run();
   return 0;
 }
