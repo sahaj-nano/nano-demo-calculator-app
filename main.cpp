@@ -11,7 +11,8 @@ int main()
       .methods("POST"_method)(&add);
   CROW_ROUTE(app, "/calculator/subtract")
       .methods("POST"_method)(&subtract);
-
+    cout<<"Hello";
+    cout<<"DOne";
   app.port(8080).run();
   return 0;
 }
