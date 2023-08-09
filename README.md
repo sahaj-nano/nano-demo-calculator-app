@@ -1,5 +1,5 @@
-<p align="center">  
-<img src="http://nano.sahaj.ai/logo.png" width="320" height="162" altText="Logo" title="NaN(O) logo">  
+<p align="center">
+<img src="http://nano.sahaj.ai/27ad2091b1714f583886.png" width="320" height="162" alt="Logo" title="NaN(O) logo">
 </p>
 
 ## What is NaN(O)  
