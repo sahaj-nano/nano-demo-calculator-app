@@ -1,4 +1,6 @@
 from flask import Flask
+from flask import request
+from flask import jsonify
 
 app = Flask(__name__)
 
@@ -9,17 +11,24 @@ def greeting():
 
 @app.route("/calculator/add", methods=['POST'])
 def add():
-    # data = request.json()
-    # first = data.get('first')
-    # second = data.get('second')
+    data = request.json
+    first = data.get('first')
+    second = data.get('second')
     
-    # if first is None or second is None:
-    #     return 'Bad Request', 400
-    return ''
+    result = first + second
+    response_data = {'result': result}
+    return jsonify(response_data), 200
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
-    return ''
+    data = request.json
+    first = data.get('first')
+    second = data.get('second')
+
+    result = first - second
+    response_data = {'result':result}
+    return jsonify(response_data),200
+
 
 if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
