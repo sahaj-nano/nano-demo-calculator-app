@@ -17,7 +17,7 @@ services:
       interval: 3s
       timeout: 2s
       retries: 3
-      # start_period: 2s  # Removed or commented out
+      # start_period: 2s  
   test-driver:
     image: postman/newman:alpine
     depends_on:
