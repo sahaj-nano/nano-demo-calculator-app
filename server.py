@@ -5,10 +5,16 @@ app = Flask(__name__)
 
 @app.route("/calculator/greeting", methods=['GET'])
 def greeting():
-    return ''
+    return 'Hello world!',200
 
 @app.route("/calculator/add", methods=['POST'])
 def add():
+    # data = request.json()
+    # first = data.get('first')
+    # second = data.get('second')
+    
+    # if first is None or second is None:
+    #     return 'Bad Request', 400
     return ''
 
 @app.route("/calculator/subtract", methods=['POST'])
