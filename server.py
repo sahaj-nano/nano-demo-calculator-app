@@ -4,7 +4,7 @@ from dataclasses import dataclass
 @dataclass
 class Result:
     result: int
-app = Flask(_name_)
+app = Flask(__name__)
 
 
 
