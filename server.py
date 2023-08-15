@@ -21,10 +21,6 @@ def add():
 def subtract():
     first = request.json.get('first')
     second = request.json.get('second')
-    if(first > second):
-        x= first - second
-    else:
-        x= second - first
     res = {
         'result': x
     }
