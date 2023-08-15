@@ -1,10 +1,11 @@
 name: Run All Tests
 
 on:
-  push:
-    branches: [ main, node ]
-  pull_request:
-    branches: [ main, node ]
+  workflow_dispatch
+  # push:
+  #   branches: [ main, node ]
+  # pull_request:
+  #   branches: [ main, node ]
 
 jobs:
   build:
