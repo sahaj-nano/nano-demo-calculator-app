@@ -5,8 +5,7 @@ app = Flask(__name__)
 
 @app.route("/calculator/greeting", methods=['GET'])
 def greeting():
-    return 'Hello there'
-
+    return "Hello sahaj"
 @app.route("/calculator/add", methods=['POST'])
 def add():
     return 'this is add'
