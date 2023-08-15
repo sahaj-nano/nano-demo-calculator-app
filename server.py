@@ -6,9 +6,6 @@ class Result:
     result: int
 app = Flask(__name__)
 
-
-
-
 @app.route("/calculator/greeting", methods=['GET'])
 def greeting():
     return "Hello world!"
@@ -25,5 +22,5 @@ def subtract():
     response = Result(numbers['first']-numbers['second'])
     return jsonify(response)
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     app.run(port=8080,host='0.0.0.0')
