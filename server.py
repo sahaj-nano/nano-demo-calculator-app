@@ -21,6 +21,7 @@ def add():
 def subtract():
     first = request.json.get('first')
     second = request.json.get('second')
+    x = first - second
     res = {
         'result': x
     }
