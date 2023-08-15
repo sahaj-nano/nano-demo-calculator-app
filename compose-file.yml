@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.3"
 
 services:
   web-app:
@@ -17,12 +17,11 @@ services:
       interval: 3s
       timeout: 2s
       retries: 3
-      start_period: 2s
+      # start_period: 2s  # Removed or commented out
   test-driver:
     image: postman/newman:alpine
     depends_on:
-      web-app-health:
-        condition: service_healthy
+      - web-app-health  # Changed to array format
     volumes:
       - ./collections:/etc/newman
     command: >
