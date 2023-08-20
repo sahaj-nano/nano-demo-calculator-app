@@ -57,3 +57,4 @@ coverage.xml
 collections/newman
 .gradle/
 .vscode/
+/.vs
