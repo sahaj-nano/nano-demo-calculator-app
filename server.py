@@ -1,10 +1,13 @@
-from flask import Flask
+from dataclasses import dataclass
+from flask import Flask, request, jsonify
 
-app = Flask(__name__)
 
 @dataclass
 class Result:
     result: int
+
+app = Flask(__name__)
+
 
 
 @app.route("/calculator/greeting", methods=['GET'])
