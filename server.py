@@ -24,4 +24,5 @@ def subtract():
     response = Result(numbers['first'] - numbers['second'])
     return jsonify(response)
 
+
 app.run(port=8080,host='0.0.0.0')
