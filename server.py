@@ -1,36 +1,27 @@
-from flask import Flask, jsonify, request
+from flask import Flask, request, make_response
+from dataclasses import dataclass
+
+@dataclass
+class Computation:
+    value: int
 
 app = Flask(__name__)
 
-@app.route('/calculator/greeting', methods=['GET'])
-def greeting():
-    return jsonify({"Content": "Hello world!"}), 200
+@app.route("/calc/welcome", methods=['GET'])
+def welcome():
+    return 'Welcome to the calculator API!'
 
-@app.route('/calculator/add', methods=['POST'])
-def add():
-    try:
-        data = request.get_json()
-        first = data['first']
-        second = data['second']
-        result = first + second
-        return jsonify({"result": result}), 200
-    except KeyError:
-        return jsonify({"error": "Invalid input. Please provide 'first' and 'second' values."}), 400
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+@app.route("/calc/sum", methods=['POST'])
+def sum_numbers():
+    data = request.get_json()
+    total = Computation(data['a'] + data['b'])
+    return make_response(total)
 
-@app.route('/calculator/subtract', methods=['POST'])
-def subtract():
-    try:
-        data = request.get_json()
-        first = data['first']
-        second = data['second']
-        result = first - second
-        return jsonify({"result": result}), 200
-    except KeyError:
-        return jsonify({"error": "Invalid input. Please provide 'first' and 'second' values."}), 400
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+@app.route("/calc/difference", methods=['POST'])
+def difference():
+    data = request.get_json()
+    diff = Computation(data['a'] - data['b'])
+    return make_response(diff)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=5000, host='0.0.0.0')
