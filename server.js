@@ -13,6 +13,7 @@ function CheckIfParamIsNum(req, res, next) {
   if (isNaN(req.body.first) || isNaN(req.body.second)) {
     return res.status(400).json({ error: "Invalid parameters" });
   }
+
   next();
 }
 
