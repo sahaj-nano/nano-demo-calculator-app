@@ -24,21 +24,21 @@ crow::response add(const crow::request &req)
     return crow::response{response_json};
 }
 
-crow::response subtract(const crow::request &req)
-{
+crow::response subtract(const crow::request &req){
+
     auto input = crow::json::load(req.body);
-    
-    if (!input)
-    {
+
+    if(!input){
         return crow::response(400, "Invalid JSON format");
     }
 
-    double first_num = input["first"].d();
-    double second_num = input["second"].d();
-    double result_num = first_num - second_num;
+    double firs = input["first"].d();
+    double second = input["second"].d();
+    double result = first + second;
 
     crow::json::wvalue response_json;
-    response_json["result"] = result_num ;
+
+    response_json["result"] = result;
 
     return crow::response{response_json};
 }
