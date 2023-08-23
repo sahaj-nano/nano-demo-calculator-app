@@ -1,6 +1,6 @@
 from flask import Flask,request, jsonify
 from dataclasses import dataclass
-app = Flask(_name_)
+app = Flask(__name__)
 
 @dataclass
 class Result:
@@ -22,5 +22,5 @@ def subtract():
     d = Result(data["first"] - data["second"])
     return jsonify(d)
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
