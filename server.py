@@ -3,7 +3,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 
-@app.route("/calculator/greeting", methods=['GET'])
+@app.route("/calculator/greeting", methods=['GET','POST'])
 def greeting():
     return 'Hello World!'
 
@@ -19,3 +19,4 @@ def subtract():
 
 if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
+
