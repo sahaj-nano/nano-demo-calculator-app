@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 
 @app.route("/calculator/greeting", methods=['GET'])
@@ -25,5 +25,5 @@ def subtract():
     response = {'result': result}
     return jsonify(response), 200
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
