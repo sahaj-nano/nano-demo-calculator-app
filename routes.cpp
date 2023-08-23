@@ -43,28 +43,3 @@ crow::response subtract(const crow::request &req)
     return crow::response{response_json};
 }
 
-int main()
-{
-    crow::SimpleApp app;
-
-    CROW_ROUTE(app, "/calculator/greeting")
-    .methods("GET"_method)
-    ([] {
-        return greet();
-    });
-
-    CROW_ROUTE(app, "/calculator/add")
-    .methods("POST"_method)
-    ([](const crow::request &req) {
-        return add(req);
-    });
-
-    CROW_ROUTE(app, "/calculator/subtract")
-    .methods("POST"_method)
-    ([](const crow::request &req) {
-        return subtract(req);
-    });
-
-    app.port(8080).multithreaded().run();
-    return 0;
-}
