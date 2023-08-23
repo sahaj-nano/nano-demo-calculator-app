@@ -19,7 +19,7 @@ crow::response add(const crow::request &req)
     double result_num = first_num + second_num;
 
     crow::json::wvalue response_json;
-    response_json["result"] = result;
+    response_json["result"] = result_num;
 
     return crow::response{response_json};
 }
@@ -38,7 +38,7 @@ crow::response subtract(const crow::request &req)
     double result_num = first_num - second_num;
 
     crow::json::wvalue response_json;
-    response_json["result"] = result ;
+    response_json["result"] = result_num ;
 
     return crow::response{response_json};
 }
