@@ -9,7 +9,7 @@ def greeting():
 
 @app.route("/calculator/add", methods=['POST'])
 def add():
-    return ''
+    return 'World'
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
