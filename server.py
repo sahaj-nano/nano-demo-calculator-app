@@ -1,7 +1,6 @@
 from flask import Flask, request
 
 app = Flask(__name__)
-#naveen
 
 @app.route("/calculator/greeting", methods=['GET'])
 def greeting():
@@ -16,8 +15,6 @@ def add():
         "result": fn + sn
     }
     return res
-
-
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
     data = request.json
@@ -29,4 +26,4 @@ def subtract():
     return res
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=8080,host='0.0.0.0')
