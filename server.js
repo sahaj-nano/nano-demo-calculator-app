@@ -16,16 +16,16 @@ baseRouter.get('/greeting', (req, res) => {
 });
 
 baseRouter.post('/add', (req, res) => {
-    var first = Number(req.first);
-    var second = Number(req.second);
+    var first = Number(req.body.first);
+    var second = Number(req.body.second);
     var result = first + second;
     res.status(200).json({"result":  + JSON.stringify(result) });
 });
 
 
 baseRouter.post('/subtract', (req, res) => {
-    var first = Number(req.first);
-    var second = Number(req.second);
+    var first = Number(req.body.first);
+    var second = Number(req.body.second);
     var result = first - second;
     res.status(200).json({"result":  + JSON.stringify(result) });
 });
