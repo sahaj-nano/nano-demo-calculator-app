@@ -5,7 +5,7 @@ from dataclasses import dataclass
 class Result:
     result: int
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 
 @app.route("/calculator/greeting", methods=['GET'])
@@ -25,3 +25,4 @@ def subtract():
     return jsonify(response)
 
 app.run(port=8080,host='0.0.0.0')
+
