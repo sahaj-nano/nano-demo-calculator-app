@@ -32,7 +32,7 @@ crow::response subtract(const crow::request &req){
         return crow::response(400, "Invalid JSON format");
     }
 
-    double firs = input["first"].d();
+    double first = input["first"].d();
     double second = input["second"].d();
     double result = first + second;
 
