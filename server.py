@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Result:
-    result=int
+    result:int
 
 app = Flask(__name__)
 
@@ -15,9 +15,11 @@ def greeting():
 @app.route("/calculator/add", methods=['POST'])
 def add():
     numbers=request.json
-    response=Result(numbers['first']+numbers['second'])
 
-    return jsonify(response)
+    print(numbers)
+    response=numbers['first']+numbers['second']
+
+    return jsonify({'result':response})
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
