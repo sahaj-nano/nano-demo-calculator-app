@@ -18,7 +18,7 @@ class MathController {
 
     @Post("/add", produces = [MediaType.APPLICATION_JSON])
     fun add(): HttpResponse<String> {
-        return HttpResponse.ok("")
+        return HttpResponse.ok("sucess")
     }
 
     @Post("/subtract", produces = [MediaType.APPLICATION_JSON])
