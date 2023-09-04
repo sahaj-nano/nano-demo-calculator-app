@@ -12,7 +12,7 @@ def add():
     data = request.get_json()
     first = data.get('first', 0)
     second = data.get('second', 0)
-    result = first - second
+    result = first + second
     response = {'result': result}
     return jsonify(response), 200
 
