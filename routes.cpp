@@ -2,12 +2,12 @@
 
 crow::response greet()
 {
-    return crow::response{""};
+    return crow::response{"hello world!"};
 }
 crow::response add(const crow::request &req)
 {
     auto input = crow::json::load(req.body);
-    return crow::response{"HELLO"};
+    return crow::response{""};
 }
 crow::response subtract(const crow::request &req)
 {
