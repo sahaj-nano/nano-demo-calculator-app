@@ -11,8 +11,8 @@ def greeting():
 def add():
     a = request.form['first']
     b = request.form['second']
-    ans = a + b
-    return { 'result' : ans }
+    answer = a + b
+    return { 'result' : answer }
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
