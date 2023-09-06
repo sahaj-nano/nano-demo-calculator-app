@@ -1,19 +1,25 @@
-from flask import Flask
+from flask import Flask, request, url_for
 
 app = Flask(__name__)
 
 
 @app.route("/calculator/greeting", methods=['GET'])
 def greeting():
-    return ''
+    return 'Hello world!'
 
 @app.route("/calculator/add", methods=['POST'])
 def add():
-    return ''
+    a = request.form['first']
+    b = request.form['second']
+    ans = a + b
+    return { 'result' : ans }
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
-    return ''
+    a = request.form['first']
+    b = request.form['second']
+    ans = a - b
+    return { 'result' : ans }
 
 if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
