@@ -11,7 +11,8 @@ app.use(express.json());
 const baseRouter = express.Router();
 
 baseRouter.get("/greeting", (req, res) => {
-  return res.send("Hello world!");
+  res.status(200);
+  return res.end("Hello world!");
 });
 
 baseRouter.post("/add", (req, res) => {
@@ -23,7 +24,6 @@ baseRouter.post("/subtract", (req, res) => {
   const ans = parseFloat(req.body.first) - parseFloat(req.body.second);
   res.json({ "result-of-the-subtraction": ans });
 });
-
 
 app.use(baseUrl, baseRouter);
 app.listen(PORT, () => {
