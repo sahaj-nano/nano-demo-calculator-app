@@ -16,7 +16,7 @@ baseRouter.get("/greeting", (req, res) => {
 
 baseRouter.post("/add", (req, res) => {
   const ans = parseFloat(req.body.first) + parseFloat(req.body.second);
-  res.json({ "result of the summation": ans });
+  res.json({ "result-of-the-summation": ans });
 });
 
 baseRouter.post("/subtract", (req, res) => {
