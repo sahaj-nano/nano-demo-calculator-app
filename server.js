@@ -12,17 +12,17 @@ const baseRouter = express.Router();
 
 baseRouter.get("/greeting", (req, res) => {
   res.status(200);
-  return res.end("Hello world!");
+  res.end("Hello world!");
 });
 
 baseRouter.post("/add", (req, res) => {
   const ans = parseFloat(req.body.first) + parseFloat(req.body.second);
-  res.json({ "result-of-the-summation": ans });
+  res.json({ result: ans });
 });
 
 baseRouter.post("/subtract", (req, res) => {
   const ans = parseFloat(req.body.first) - parseFloat(req.body.second);
-  res.json({ "result-of-the-subtraction": ans });
+  res.json({ result: ans });
 });
 
 app.use(baseUrl, baseRouter);
