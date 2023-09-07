@@ -12,7 +12,7 @@ const baseRouter = express.Router();
 baseRouter.get('/greeting', (req, res) => {
     res.status(200);
     //res.sendStatus(200);
-    res.end("Hello World");
+    res.end("Hello world!");
 });
 
 baseRouter.post('/add', (req, res) => {
