@@ -2,27 +2,52 @@
 
 crow::response greet()
 {
-    return crow::response{"Hello world!"};
+    crow::response res;
+    res.code = 200;
+    res.set_header("Content-Type", "text/plain");
+    res.body = "Hello world!";
+    
+    return res;
 }
 crow::response add(const crow::request &req)
 {
     auto input = crow::json::load(req.body);
-    if(!input){
-        return crow::response(200,"INVALID JSON");
+    if (!input || !input.has("first") || !input.has("second")) {
+        return crow::response(400, "Invalid JSON format");
     }
-    int num1=input["num1"].i();
-    int num2=input["num2"].i();
-    int res=num1+num2;
-    return crow::response{crow::json::dump_to_string(res)};
+    int first = input["first"].i();
+    int second = input["second"].i();
+    
+
+    int result = first + second;
+
+    crow::json::wvalue response;
+    response["result"] = result;
+
+    crow::response res;
+    res.code = 200;
+    res.set_header("Content-Type", "application/json");
+    res.body = crow::json::dump(response);
+    return res;
 }
 crow::response subtract(const crow::request &req)
 {
     auto input = crow::json::load(req.body);
-     if(!input){
-        return crow::response(200,"INVALID JSON");
+     if (!input || !input.has("first") || !input.has("second")) {
+        return crow::response(400, "Invalid JSON format");
     }
-    int num1=input["num1"].i();
-    int num2=input["num2"].i();
-    int res=num1-num2;
-    return crow::response{crow::json::dump_to_string(res)};
+    int first = input["first"].i();
+    int second = input["second"].i();
+    
+
+    int result = first - second;
+
+    crow::json::wvalue response;
+    response["result"] = result;
+
+    crow::response res;
+    res.code = 200;
+    res.set_header("Content-Type", "application/json");
+    res.body = crow::json::dump(response);
+    return res;
 }
