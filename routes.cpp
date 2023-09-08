@@ -21,11 +21,8 @@ crow::response add(const crow::request &req)
 
     int result = first + second;
 
-    crow::json::wvalue response;
-    response["result"] = result;
-
     std::ostringstream oss;
-    crow::json::wstream(oss, response);
+    oss << "{\"result\":" << result << "}";
 
     // Return the response with status code 200 and JSON content
     crow::response res;
@@ -47,11 +44,8 @@ crow::response subtract(const crow::request &req)
 
     int result = first - second;
 
-    crow::json::wvalue response;
-    response["result"] = result;
-
     std::ostringstream oss;
-    crow::json::wstream(oss, response);
+    oss << "{\"result\":" << result << "}";
 
     // Return the response with status code 200 and JSON content
     crow::response res;
