@@ -27,7 +27,7 @@ crow::response add(const crow::request &req)
     crow::response res;
     res.code = 200;
     res.set_header("Content-Type", "application/json");
-    res.body = crow::json::dump(response);
+    res.body = crow::json::dump_to_string(response);
     return res;
 }
 crow::response subtract(const crow::request &req)
@@ -48,6 +48,6 @@ crow::response subtract(const crow::request &req)
     crow::response res;
     res.code = 200;
     res.set_header("Content-Type", "application/json");
-    res.body = crow::json::dump(response);
+    res.body = crow::json::dump_to_string(response);
     return res;
 }
