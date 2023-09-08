@@ -24,10 +24,15 @@ crow::response add(const crow::request &req)
     crow::json::wvalue response;
     response["result"] = result;
 
+    std::ostringstream oss;
+    crow::json::wstream(oss, response);
+
+    // Return the response with status code 200 and JSON content
     crow::response res;
     res.code = 200;
     res.set_header("Content-Type", "application/json");
-    res.body = crow::json::dump_to_string(response);
+    res.body = oss.str();
+
     return res;
 }
 crow::response subtract(const crow::request &req)
@@ -45,9 +50,14 @@ crow::response subtract(const crow::request &req)
     crow::json::wvalue response;
     response["result"] = result;
 
+    std::ostringstream oss;
+    crow::json::wstream(oss, response);
+
+    // Return the response with status code 200 and JSON content
     crow::response res;
     res.code = 200;
     res.set_header("Content-Type", "application/json");
-    res.body = crow::json::dump_to_string(response);
+    res.body = oss.str();
+
     return res;
 }
