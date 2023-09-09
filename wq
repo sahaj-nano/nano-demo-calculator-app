@@ -1,0 +1,71 @@
+[33mcommit 18ca4816823c76965fa9cc8d590060e53aad62bd[m[33m ([m[1;36mHEAD -> [m[1;32mfarooq[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/farooq[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Karun Japhet <javatarz@users.noreply.github.com>
+Date:   Tue Aug 1 12:41:06 2023 +0530
+
+    Fix logo
+
+[33mcommit 01dbb316aad78c8522ea99593916f0bc7abf7406[m
+Author: Kartikay Shandil <kartikays@sahaj.ai>
+Date:   Fri May 26 11:45:13 2023 +0530
+
+    Improve Readme
+
+[33mcommit 6f2d29a2c76f3ee3f5c38e04e65f6824ff7bbc12[m
+Author: Kartikay Shandil <kartikays@sahaj.ai>
+Date:   Fri May 26 00:20:35 2023 +0530
+
+    Improve Readme
+
+[33mcommit 7239e6a51f9998df23a8d2b3c6d873dfa447b64a[m
+Author: Karun Japhet <javatarz@users.noreply.github.com>
+Date:   Thu May 25 10:03:45 2023 +0530
+
+    Fix title alignment
+
+[33mcommit 0c16c1ad60a3039e368943d464e80fbdeabf37f8[m
+Author: Kartikay Shandil <kartikays@sahaj.ai>
+Date:   Mon May 8 08:19:09 2023 +0530
+
+    Add proper readme
+
+[33mcommit 0b82ae6f609938927309a4ad9b45a81fea4600cb[m
+Author: Kartikay Shandil <kartikays@sahaj.ai>
+Date:   Thu May 4 20:20:55 2023 +0530
+
+    Remove actual answers
+
+[33mcommit ddd68a6dd98d1b58f8fb792aa8de48869655a007[m
+Author: Kartikay Shandil <kartikays@sahaj.ai>
+Date:   Thu May 4 17:15:19 2023 +0530
+
+    Add workflow for running tests
+
+[33mcommit e9e5c565521616627170584d3acbae9c662fd316[m
+Author: Kartikay Shandil <kartikays@sahaj.ai>
+Date:   Thu May 4 17:04:41 2023 +0530
+
+    Add newman based tests
+
+[33mcommit 7b3435cb2274483f447d0244141e5979b9e1002b[m
+Author: Kartikay Shandil <kartikays@sahaj.ai>
+Date:   Thu May 4 12:09:29 2023 +0530
+
+    Add greetings endpoint, make Add/Subtract controller response a json
+
+[33mcommit b751a82c13bfac35d7bd7da8508eb2ea34d1434d[m
+Author: Kartikay Shandil <kartikays@sahaj.ai>
+Date:   Tue May 2 15:54:55 2023 +0530
+
+    Add docker file for the app
+
+[33mcommit ec007a120a83c86eaa058bf32e233e622a1fe84e[m
+Author: Kartikay Shandil <kartikays@sahaj.ai>
+Date:   Tue May 2 14:29:43 2023 +0530
+
+    Add math controllers
+
+[33mcommit 5e2baf25eb16e7419a879d4c4fd9db413bd5fdd7[m
+Author: Kartikay Shandil <kartikays@sahaj.ai>
+Date:   Tue May 2 14:12:51 2023 +0530
+
+    Setup micronaut project skeleton
