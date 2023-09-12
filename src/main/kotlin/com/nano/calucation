@@ -1,0 +1,11 @@
+class Add{
+public static void main (String args){
+    int x,y,sum,sub;
+    sum=x+y;
+    sub=x-y;
+    System.out.println("sum:"+sum);
+    System.out.println("sum:"+sub);
+
+
+}
+}
