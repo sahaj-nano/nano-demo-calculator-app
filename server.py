@@ -9,10 +9,14 @@ def greeting():
 
 @app.route("/calculator/add", methods=['POST'])
 def add():
+    first=int(input('Enter first number'))
+    second=int(input('Enter second number'))
     return first+second
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
+    first=int(input('Enter first number'))
+    second=int(input('Enter second number'))
     return first-second
 
 if __name__ == '__main__':
@@ -20,10 +24,11 @@ if __name__ == '__main__':
     greetings=greeting()
     print(greetings)
     operation=input('What do you want to do "Add" or "Subtract"')
-    first=int(input('Enter first number'))
-    second=int(input('Enter second number'))
+    
     if operation=='add':
-        print(add())
+        add=add()
+        print(add)
     else:
-        print(subtract())
+        subtract=subtract()
+        print(subtract)
 
