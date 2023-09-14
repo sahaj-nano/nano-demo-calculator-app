@@ -22,15 +22,11 @@ baseRouter.post('/add', (req, res) => {
 
 baseRouter.post('/subtract', (req, res) => {
     res.status(200)
-    res.json({ "result":req.body.first+req.body.second});
-});
-
-
-baseRouter.post('/subtract', (req, res) => {
-    res.status(200)
     res.json({ "result":req.body.first-req.body.second});
-    
 });
+
+
+
 
 app.use(baseUrl, baseRouter);
 app.listen(PORT, () => {
