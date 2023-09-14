@@ -5,15 +5,24 @@ app = Flask(__name__)
 
 @app.route("/calculator/greeting", methods=['GET'])
 def greeting():
-    return ''
+    return 'Hello world!'
 
 @app.route("/calculator/add", methods=['POST'])
-def add():
-    return ''
+def add(first,second):
+    return first+second
 
 @app.route("/calculator/subtract", methods=['POST'])
-def subtract():
-    return ''
+def subtract(first,second):
+    return first-second
 
 if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
+    greetings=greeting()
+    operation=input('What do you want to do "Add" or "Subtract"')
+    first=int(input('Enter the first number'))
+    second=int(input('Enter the second number'))
+    if operation=='add':
+        print(add(first,second))
+    else:
+        print(subtract(first,second))
+
