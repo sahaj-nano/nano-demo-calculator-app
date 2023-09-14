@@ -3,8 +3,8 @@ package calculator_application;
 import java.util.Scanner;
 
 public class Calculator{
-	public static String greetings() {
-		return "hello world!";
+	public static String greetings(String greeting) {
+		return greeting;
 	}
 	public static int add(int a,int b) {
 		return a+b;
@@ -21,12 +21,14 @@ public class Calculator{
 		int first_number =sc.nextInt();
 		System.out.println("enter second number");
 		int second_number=sc.nextInt();
+		System.out.println("Enter Greetings");
+		String greeting = sc.nextLine();
 		System.out.println("Choose any number[0,1,2] to perform addition and subtraction");
 		int n= sc.nextInt();
 
 		switch(n) {
 		case 0:
-			System.out.println(greetings());
+			System.out.println(greetings(greeting));
 		case 1: 
 			System.out.println(add(first_number,second_number));
 			break;
