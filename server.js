@@ -25,6 +25,7 @@ baseRouter.post('/add', (req, res) => {
 baseRouter.post('/subtract', (req, res) => {
     var a=parseInt(req.body["first"])-parseInt(req.body["second"]);
     res.json({ "result": a });
+    
 });
 
 app.use(baseUrl, baseRouter);
