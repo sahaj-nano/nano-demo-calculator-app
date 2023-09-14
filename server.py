@@ -8,11 +8,11 @@ def greeting():
     return 'Hello world!'
 
 @app.route("/calculator/add", methods=['POST'])
-def add(first,second):
+def add():
     return first+second
 
 @app.route("/calculator/subtract", methods=['POST'])
-def subtract(first,second):
+def subtract():
     return first-second
 
 if __name__ == '__main__':
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     first=int(input('Enter first number'))
     second=int(input('Enter second number'))
     if operation=='add':
-        print(add(first,second))
+        print(add())
     else:
-        print(subtract(first,second))
+        print(subtract())
 
