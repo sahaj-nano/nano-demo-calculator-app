@@ -2,7 +2,7 @@
 
 crow::response greet()
 {
-    return crow::response{"code 200"};
+   
     return crow::response{"Hello world!"};
     
 }
@@ -13,7 +13,7 @@ crow::response add(const crow::request &req)
      crow::json::wvalue result;
     result["result"] = input["first"].i() + input["second"].i();
     return result;
-    return crow::response{""};
+    
 }
 crow::response subtract(const crow::request &req)
 {
@@ -22,5 +22,5 @@ crow::response subtract(const crow::request &req)
     crow::json::wvalue result;
     result["result"] = input["first"].i() - input["second"].i();
     return result;
-    return crow::response{""};
+    
 }
