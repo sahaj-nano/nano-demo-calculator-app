@@ -22,7 +22,7 @@ baseRouter.post('/add', (req, res) => {
 
 
 baseRouter.post('/subtract', (req, res) => {
-    var k = -parseInt(req.body.first)+parseInt(req.body.second);
+    var k = parseInt(req.body.first)-parseInt(req.body.second);
     res.json({ "result": k });
 });
 
