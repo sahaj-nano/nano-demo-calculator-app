@@ -6,12 +6,12 @@ target/
 out/
 .micronaut/
 .idea
-*.iml
-*.ipr
-*.iws
+.iml
+.ipr
+.iws
 .project
 .settings
 .classpath
 .factorypath
-*newman/
+newman/
 .vscode/
