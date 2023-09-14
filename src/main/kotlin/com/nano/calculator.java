@@ -2,7 +2,7 @@ package calculator_application;
 
 import java.util.Scanner;
 
-public class Calculator {
+public class calculator {
 	public static String greetings() {
 		return "Hello World!";
 	}
