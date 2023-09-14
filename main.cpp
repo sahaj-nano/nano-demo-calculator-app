@@ -4,7 +4,7 @@
 #include <iostream>
 int main()
 {
-    string statusCode;
+    
 
   crow::SimpleApp app;
   statusCode = apiContractObject.GetStatusCode();
