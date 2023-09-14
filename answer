@@ -1,0 +1,36 @@
+#include "crow_all.h"
+
+crow::response greet()
+{
+    return crow::response{"Hello, welcome to the calculator!\n"};
+}
+
+crow::response add(const crow::request &req)
+{
+    auto input = crow::json::load(req.body);
+    if (!input)
+    {
+        return crow::response(400, "Invalid JSON");
+    }
+
+    int a = input["a"].i();
+    int b = input["b"].i();
+    int result = a + b;
+
+    return crow::response{std::to_string(result) + "\n"};
+}
+
+crow::response subtract(const crow::request &req)
+{
+    auto input = crow::json::load(req.body);
+    if (!input)
+    {
+        return crow::response(400, "Invalid JSON");
+    }
+
+    int a = input["a"].i();
+    int b = input["b"].i();
+    int result = a - b;
+
+    return crow::response{std::to_string(result) + "\n"};
+}
