@@ -2,9 +2,9 @@ package calculator_application;
 
 import java.util.Scanner;
 
-public class alculator {
+public class Calculator {
 	public static String greetings() {
-		return "Hello World!";
+		return "hello world!";
 	}
 	public static int add(int a,int b) {
 		return a+b;
