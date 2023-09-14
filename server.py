@@ -20,7 +20,8 @@ if __name__ == '__main__':
     greetings=greeting()
     print(greetings)
     operation=input('What do you want to do "Add" or "Subtract"')
-    first,second=list(map(int,input().split()))
+    first=int(input('Enter first number'))
+    second=int(input('Enter second number'))
     if operation=='add':
         print(add(first,second))
     else:
