@@ -9,7 +9,7 @@ def greeting():
 
 @app.route("/calculator/add", methods=['POST'])
 def add():
-    data = request.get_json()
+    numbers = request.get_json()
     f= numbers["first"]
     s= numbers["second"]
     res= f+s
