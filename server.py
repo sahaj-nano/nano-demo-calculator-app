@@ -18,6 +18,7 @@ def subtract(first,second):
 if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
     greetings=greeting()
+    print(greetings)
     operation=input('What do you want to do "Add" or "Subtract"')
     first,second=list(map(int,input().split()))
     if operation=='add':
