@@ -19,8 +19,7 @@ if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
     greetings=greeting()
     operation=input('What do you want to do "Add" or "Subtract"')
-    first=int(input('Enter the first number'))
-    second=int(input('Enter the second number'))
+    first,second=list(map(int,input().split()))
     if operation=='add':
         print(add(first,second))
     else:
