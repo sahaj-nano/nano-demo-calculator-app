@@ -3,14 +3,12 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-
 const PORT = process.env.PORT || 8080;
 
 const baseUrl = '/calculator'
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json())
-
 
 const baseRouter = express.Router();
 
