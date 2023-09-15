@@ -1,16 +1,16 @@
 const express = require('express');
 const app = express();
-
 const PORT = process.env.PORT || 3000
 
 const baseUrl = '/calculator'
-
+const bodyparser = require("body-parser");
+app.use(bodyparser.urlencoded({extended:true}));
 app.use(express.json());
 
 const baseRouter = express.Router();
 
 baseRouter.get('/greeting', (req, res) => {
-    return res.send('Hello World!');
+    return res.send('Hello!');
 });
 
 baseRouter.post('/add', (req, res) => {
