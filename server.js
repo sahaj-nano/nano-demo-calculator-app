@@ -12,7 +12,8 @@ const baseRouter = express.Router();
 baseRouter.get('/greeting', (req, res) => {
     res.status(200)
     return res.send('Hello World!');
-});
+});//ranigit status
+
 
 baseRouter.post('/add', (req, res) => {
     res.status(200)
