@@ -1,4 +1,5 @@
 const express = require('express');
+
 const app = express();
 
 const PORT = process.env.PORT || 8080;
@@ -10,16 +11,22 @@ app.use(express.json());
 const baseRouter = express.Router();
 
 baseRouter.get('/greeting', (req, res) => {
-    return res.send('');
+    return res.send('Hello world!');
 });
 
 baseRouter.post('/add', (req, res) => {
-    res.json({ "": null });
+    let first= req.body.first;
+    let second = req.body.second;
+    console.log(first);
+    res.json({ "result": first+second });
 });
 
 
 baseRouter.post('/subtract', (req, res) => {
-    res.json({ "": null });
+    let first= req.body.first;
+    let second = req.body.second;
+    console.log(first);
+    res.json({ "result": first-second });
 });
 
 app.use(baseUrl, baseRouter);
