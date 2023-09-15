@@ -9,7 +9,7 @@ const baseUrl = '/calculator'
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.json())
+
 
 const baseRouter = express.Router();
 
