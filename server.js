@@ -1,3 +1,4 @@
+
 const express = require('express');
 const app = express();
 
@@ -23,11 +24,8 @@ baseRouter.post('/add', (req, res) => {
 baseRouter.post('/subtract', (req, res) => {
     res.status(200)
     res.json({ "result":req.body.first-req.body.second});
+    
 });
-
-
-
-
 app.use(baseUrl, baseRouter);
 app.listen(PORT, () => {
     console.log("Server running at PORT", PORT);
