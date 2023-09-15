@@ -1,25 +1,35 @@
 const express = require('express');
 const app = express();
-
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080
 
 const baseUrl = '/calculator'
-
+const bodyparser = require("body-parser");
+app.use(bodyparser.urlencoded({extended:true}));
 app.use(express.json());
 
 const baseRouter = express.Router();
 
 baseRouter.get('/greeting', (req, res) => {
-    return res.send('');
+    return res.send('hello world!');
 });
 
 baseRouter.post('/add', (req, res) => {
-    res.json({ "": null });
+    var a=parseInt(req.body.first);
+     var b=parseInt(req.body.second);
+     res.json({
+        "result":a+b,
+     }
+     )
 });
 
 
 baseRouter.post('/subtract', (req, res) => {
-    res.json({ "": null });
+    var a=parseInt(req.body.first);
+    var b=parseInt(req.body.second);
+    res.json({
+       "result":a-b,
+    }
+    );
 });
 
 app.use(baseUrl, baseRouter);
