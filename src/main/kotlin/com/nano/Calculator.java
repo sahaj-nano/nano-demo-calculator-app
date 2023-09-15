@@ -7,7 +7,7 @@ import java.nio.charset.StandardCharsets;
 
 import com.google.gson.Gson;
 
-public class JsonToJava {
+public class Calculator {
 
     public static void main(String[] args) throws IOException {
         // Get the path to the JSON file.
