@@ -11,18 +11,20 @@ import io.micronaut.validation.Validated
 @Validated
 class MathController {
 
-    @Get("/greeting")
+     @Get("/greeting")
     fun greeting(): HttpResponse<String> {
-        return HttpResponse.ok("")
+        return HttpResponse.ok("Hello world!")
     }
 
     @Post("/add", produces = [MediaType.APPLICATION_JSON])
-    fun add(): HttpResponse<String> {
-        return HttpResponse.ok("")
+    fun add(first: Int, second: Int): HttpResponse<Map<String, Int>> {
+        val result = first + second
+        return HttpResponse.ok(mapOf("result" to result))
     }
 
     @Post("/subtract", produces = [MediaType.APPLICATION_JSON])
-    fun subtract(): HttpResponse<String> {
-        return HttpResponse.ok("")
+    fun subtract(first: Int, second: Int): HttpResponse<Map<String, Int>> {
+        val result = first - second
+        return HttpResponse.ok(mapOf("result" to result))
     }
 }
